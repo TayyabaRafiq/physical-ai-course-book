@@ -115,10 +115,10 @@ User: "Pick up the red block"
 ```
 
 **Timing Breakdown**:
-- Prompt loading: <10ms
+- Prompt loading: &lt;10ms
 - LLM API call: 800-1500ms
-- Pydantic validation: <5ms
-- Parameter validation: <1ms
+- Pydantic validation: &lt;5ms
+- Parameter validation: &lt;1ms
 
 ### Stage 3: Action Planning (Intent → Action Sequence)
 
@@ -171,10 +171,10 @@ User: Action Type: pick
 ```
 
 **Timing Breakdown**:
-- Prompt loading: <10ms
-- Intent formatting: <1ms
+- Prompt loading: &lt;10ms
+- Intent formatting: &lt;1ms
 - LLM API call: 1000-2500ms (depends on plan complexity)
-- Plan conversion: <5ms
+- Plan conversion: &lt;5ms
 
 ### Stage 4: Plan Validation (Safety Checks)
 
@@ -224,9 +224,9 @@ else:
 - ✓ Expected outcomes specified
 
 **Timing Breakdown**:
-- Step count check: <1ms
+- Step count check: &lt;1ms
 - Per-step validation: ~5ms × num_steps
-- Topological check: <5ms
+- Topological check: &lt;5ms
 - Total: ~10-50ms for typical plans
 
 ### Stage 5: Execution Monitoring (Plan → Robot Actions)
