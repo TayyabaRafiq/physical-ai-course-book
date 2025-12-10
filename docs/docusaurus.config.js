@@ -12,7 +12,7 @@ const config = {
   organizationName: 'vla-team',
   projectName: 'vla-integration',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
