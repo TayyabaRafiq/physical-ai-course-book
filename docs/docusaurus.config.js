@@ -7,7 +7,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/', // Root path for Vercel deployment
+  baseUrl: '/',
 
   organizationName: 'vla-team',
   projectName: 'vla-integration',
