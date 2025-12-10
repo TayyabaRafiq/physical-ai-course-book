@@ -1,7 +1,7 @@
 # VLA Integration - Python Dependencies
-# Voice Layer
-openai-whisper>=20231117
-pyaudio>=0.2.13
+# Voice Layer (audio capture disabled for static deployment)
+# openai-whisper>=20231117  # Disabled for static site deployment
+# pyaudio>=0.2.13  # Disabled for static site deployment
 numpy>=1.24.0
 
 # Cognitive Layer (LLM + Agentic Framework)
@@ -27,9 +27,9 @@ aio-pika>=9.3.0  # For async message passing if needed
 aiofiles>=23.2.1  # Async file I/O
 aiohttp>=3.9.0  # Async HTTP client
 
-# Audio Processing
-sounddevice>=0.4.6  # Alternative to PyAudio
-scipy>=1.11.0  # Signal processing utilities
+# Audio Processing (disabled for static deployment)
+# sounddevice>=0.4.6  # Disabled for static site deployment
+# scipy>=1.11.0  # Disabled for static site deployment
 
 # Configuration Management
 python-dotenv>=1.0.0
@@ -48,7 +48,7 @@ mypy>=1.7.0
 flake8>=6.1.0
 
 # Type Stubs
-types-pyaudio
+# types-pyaudio  # Disabled for static site deployment
 types-requests
 
 # Logging
