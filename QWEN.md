@@ -1,4 +1,4 @@
-﻿# Claude Code Rules
+# Qwen Code Rules
 
 This file is generated during init for the selected agent.
 

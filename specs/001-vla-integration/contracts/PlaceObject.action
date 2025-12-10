@@ -1,0 +1,21 @@
+# PlaceObject.action
+# ROS 2 action for placing a grasped object at a target location
+
+# Goal: What the client wants
+geometry_msgs/Pose placement_pose   # Target pose for object placement (world frame)
+string placement_surface            # Surface ID for stability check (e.g., "table_1")
+float32 approach_height             # Height above placement_pose for pre-place (meters), default: 0.1
+bool gentle_release                 # If true, slowly open gripper; if false, quick release
+---
+# Result: What the server returns when done
+bool success                        # True if object successfully placed
+string error_message                # Empty if success, otherwise error description
+geometry_msgs/Pose final_object_pose # Actual final pose of placed object
+bool stable_placement               # True if object is stable after release
+---
+# Feedback: Progress updates during execution
+string current_phase                # "approaching" | "lowering" | "releasing" | "retracting"
+float32 progress_percent            # 0.0 to 100.0
+geometry_msgs/Pose current_ee_pose  # Current end-effector pose
+float32 gripper_opening             # Current gripper opening (0.0=closed, 1.0=open)
+string status_message               # Human-readable status update

@@ -1,0 +1,24 @@
+# NavigateToPoint.action
+# ROS 2 action for base navigation to a target pose
+
+# Goal: What the client wants
+geometry_msgs/PoseStamped target_pose  # Target pose in map frame
+float32 tolerance_xy                   # Position tolerance (meters), default: 0.1
+float32 tolerance_theta                # Orientation tolerance (radians), default: 0.15
+float32 max_speed                      # Maximum linear velocity (m/s), default: 0.5
+bool avoid_obstacles                   # Enable dynamic obstacle avoidance, default: true
+---
+# Result: What the server returns when done
+bool success                        # True if navigation succeeded
+string error_message                # Empty if success, otherwise error description
+geometry_msgs/PoseStamped final_pose # Actual final pose achieved
+float32 distance_traveled           # Total path length (meters)
+float32 time_elapsed                # Execution duration (seconds)
+---
+# Feedback: Progress updates during execution
+string current_state                # "planning" | "navigating" | "recovering" | "finalizing"
+float32 distance_remaining          # Estimated remaining distance (meters)
+float32 progress_percent            # 0.0 to 100.0
+geometry_msgs/PoseStamped current_pose # Current robot pose
+int32 recovery_attempts             # Number of recovery behaviors triggered
+string status_message               # Human-readable status update

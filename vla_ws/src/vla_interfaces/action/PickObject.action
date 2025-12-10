@@ -1,0 +1,20 @@
+# PickObject.action
+# ROS 2 action for grasping an object in the simulation environment
+
+# Goal: What the client wants
+string object_id                    # Unique identifier of target object
+geometry_msgs/Vector3 approach_offset  # Offset from object center for approach (meters)
+string grasp_type                   # "top", "side", "front" - grasp orientation
+float32 max_force                   # Maximum gripper force (Newtons), default: 50.0
+---
+# Result: What the server returns when done
+bool success                        # True if object successfully grasped
+string error_message                # Empty if success, otherwise error description
+geometry_msgs/Pose final_grasp_pose # Actual pose where grasp was achieved
+float32 grasp_force                 # Applied gripper force (Newtons)
+---
+# Feedback: Progress updates during execution
+string current_phase                # "approaching" | "pre_grasp" | "grasping" | "lifting"
+float32 progress_percent            # 0.0 to 100.0
+geometry_msgs/Pose current_ee_pose  # Current end-effector pose
+string status_message               # Human-readable status update

@@ -1,0 +1,259 @@
+# VLA Integration - Git Ignore File
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ============================================================================
+# ROS 2
+# ============================================================================
+# ROS workspace build artifacts
+vla_ws/build/
+vla_ws/install/
+vla_ws/log/
+
+# ROS bag files (recorded data)
+*.bag
+*.db3
+
+# ROS parameter files (may contain sensitive data)
+*.yaml.bak
+
+# ============================================================================
+# Gazebo / Simulation
+# ============================================================================
+# Gazebo log files
+.gazebo/
+*.log
+gazebo_*.log
+
+# Model states
+model_states/
+*.world.bak
+
+# Physics engine temp files
+*.physics
+
+# ============================================================================
+# IDEs and Editors
+# ============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.sw?
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================================================
+# OS-specific
+# ============================================================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================================================
+# Environment and Secrets
+# ============================================================================
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+credentials.json
+
+# ============================================================================
+# Logs and Data
+# ============================================================================
+logs/
+*.log
+log/
+*.csv
+*.json.bak
+
+# Execution traces (keep directory structure but ignore contents)
+logs/executions/**/*.json
+!logs/executions/.gitkeep
+
+# ============================================================================
+# AI Models and Large Files
+# ============================================================================
+# Whisper models (downloaded on demand)
+models/
+*.pt
+*.pth
+*.ckpt
+
+# LLM cache
+.langchain_cache/
+.openai_cache/
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+.backup/
+
+# Audio recordings
+*.wav
+*.mp3
+*.flac
+recordings/
+
+# ============================================================================
+# Documentation Build
+# ============================================================================
+# Sphinx
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Docusaurus
+docs/build/
+docs/.docusaurus/
+docs/node_modules/
+docs/yarn.lock
+docs/package-lock.json
+
+# MkDocs
+site/
+
+# ============================================================================
+# Package Managers
+# ============================================================================
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# npm/yarn (for documentation)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================================
+# Project-Specific
+# ============================================================================
+# Cached plan files
+cached_plans/
+*.plan.cache
+
+# Performance profiling
+*.prof
+*.profile
+.profiling/
+
+# Experiment results
+experiments/
+results/
+
+# Dataset downloads (if any)
+data/downloads/

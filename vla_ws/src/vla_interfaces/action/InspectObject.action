@@ -1,0 +1,20 @@
+# InspectObject.action
+# ROS 2 action for observing an object or area (moves head/camera, not implemented in MVP)
+
+# Goal: What the client wants
+string target_id                    # Object or region ID to inspect
+geometry_msgs/Point target_position # 3D position to look at (world frame)
+float32 inspection_duration         # How long to observe (seconds), default: 2.0
+bool detailed_scan                  # If true, perform multi-angle observation
+---
+# Result: What the server returns when done
+bool success                        # True if inspection completed
+string error_message                # Empty if success, otherwise error description
+string observation_summary          # Text description of observed features (future: vision integration)
+int32 num_images_captured           # Number of camera frames analyzed
+---
+# Feedback: Progress updates during execution
+string current_phase                # "orienting" | "observing" | "processing"
+float32 progress_percent            # 0.0 to 100.0
+float32 time_remaining              # Estimated seconds until completion
+string status_message               # Human-readable status update
