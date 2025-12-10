@@ -234,7 +234,7 @@ AUDIO_SAMPLE_RATE=8000  # Instead of 16000
 #### Low Transcription Accuracy
 
 **Symptoms**:
-- Confidence scores consistently <0.7
+- Confidence scores consistently &lt;0.7
 - Incorrect words in transcription
 
 **Solutions**:

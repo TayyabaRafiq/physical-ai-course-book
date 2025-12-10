@@ -699,7 +699,7 @@ LOG_RETENTION_HOURS=168  # 1 week
 | Operation | Duration | Notes |
 |-----------|----------|-------|
 | Action Execution | Variable | Depends on physical action (3-30s) |
-| State Updates | <1ms | Thread-safe dict operations |
+| State Updates | &lt;1ms | Thread-safe dict operations |
 | Log Persistence | 10-50ms | JSON file write |
 | Total Overhead | ~50ms | Monitoring + logging per action |
 

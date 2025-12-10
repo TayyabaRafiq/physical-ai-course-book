@@ -70,7 +70,7 @@ command = VoiceCommand(
 **Timing Breakdown**:
 - Audio capture: 100-500ms (depends on command length)
 - Whisper inference: 500-1500ms (GPU) or 2000-5000ms (CPU)
-- Confidence check: <1ms
+- Confidence check: &lt;1ms
 
 **Retry Logic**:
 - If confidence < 0.7 → retry up to 2 times

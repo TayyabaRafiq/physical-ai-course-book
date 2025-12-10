@@ -89,7 +89,7 @@ The system processes your command through 6 stages:
    Estimated duration: 18.0s
 ```
 
-#### Stage 4: Plan Validation (<100ms)
+#### Stage 4: Plan Validation (&lt;100ms)
 
 ```
 ✓ Validating plan...
