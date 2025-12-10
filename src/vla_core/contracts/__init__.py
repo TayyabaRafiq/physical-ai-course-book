@@ -2,16 +2,14 @@
 
 from .interfaces import (
     IActionPlanner,
+    IActionService,
     IAudioCapture,
     IExecutionMonitor,
     IIntentParser,
     IPlanValidator,
-    IRosInterface,
     ITranscriber,
     IVlaPipeline,
     IVoiceInterface,
-    MockAudioCapture,
-    MockTranscriber,
 )
 
 __all__ = [
@@ -21,9 +19,7 @@ __all__ = [
     "IIntentParser",
     "IActionPlanner",
     "IPlanValidator",
-    "IRosInterface",
+    "IActionService",
     "IExecutionMonitor",
     "IVlaPipeline",
-    "MockAudioCapture",
-    "MockTranscriber",
 ]

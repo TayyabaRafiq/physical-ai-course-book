@@ -8,7 +8,30 @@ from pathlib import Path
 from typing import Optional, Tuple
 
 import numpy as np
-import whisper
+
+# Mock whisper for environments without the library (e.g., static site deployment)
+try:
+    import whisper
+except ImportError:
+    # Create mock whisper module for import compatibility
+    class MockWhisper:
+        @staticmethod
+        def load_model(name, device="cpu"):
+            return MockWhisperModel()
+
+        class Whisper:
+            pass
+
+    class MockWhisperModel:
+        def transcribe(self, audio, **kwargs):
+            return {
+                "text": "Mock transcription",
+                "segments": [],
+                "language": "en",
+                "no_speech_prob": 0.0
+            }
+
+    whisper = MockWhisper()
 
 from ..contracts.interfaces import ITranscriber
 from ..utils.config import get_config

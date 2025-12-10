@@ -9,7 +9,38 @@ from io import BytesIO
 from typing import AsyncIterator, Optional
 
 import numpy as np
-import pyaudio
+
+# Mock pyaudio for environments without audio hardware (e.g., static site deployment)
+try:
+    import pyaudio
+except ImportError:
+    # Create mock pyaudio module for import compatibility
+    class MockPyAudio:
+        paInt16 = 8  # Mock format constant
+
+        class PyAudio:
+            def __init__(self):
+                pass
+            def get_default_input_device_info(self):
+                return {'index': 0, 'name': 'Mock Device'}
+            def get_device_info_by_index(self, index):
+                return {'name': 'Mock Device', 'maxInputChannels': 1, 'defaultSampleRate': 16000}
+            def open(self, *args, **kwargs):
+                return None
+            def terminate(self):
+                pass
+            def get_device_count(self):
+                return 0
+
+        class Stream:
+            def read(self, frames):
+                return b'\x00' * frames * 2  # Mock audio data
+            def stop_stream(self):
+                pass
+            def close(self):
+                pass
+
+    pyaudio = MockPyAudio()
 
 from ..contracts.interfaces import IAudioCapture
 from ..utils.config import get_config

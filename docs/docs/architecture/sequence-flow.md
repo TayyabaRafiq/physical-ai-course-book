@@ -325,7 +325,7 @@ with open(log_path, "w") as f:
 | Logging | 10-50ms | Low |
 | **Total** | **8-70s** | - |
 
-**Latency Budget**: Target <3s for voice → validated plan
+**Latency Budget**: Target &lt;3s for voice → validated plan
 
 ## Error Handling
 
